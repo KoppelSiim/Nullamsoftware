@@ -18,7 +18,7 @@ namespace Nullamsoftware.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Addevent()
         {
             return View();
         }

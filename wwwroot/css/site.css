@@ -43,15 +43,43 @@ body {
 
 .event {
     background-color: blue;
+    height: 8vh;
+    padding:1vw;
+}
+.col-content {
+    background-color:blue;
     color: white;
     font-size: 1vw;
-    padding: 1vw;
     color: white;
     text-align: center;
+    font-size:1vw;
+    height:7vh;
+}
+
+.col-content2{
+    background-color:white;
+    color:black;
+    height:25vh;
 }
 .contact {
-    background-color: grey;
-    height: 25vh;
+    background-color: rgb(54, 56, 55);
+    height: 22vh;
+    font-size: 0.8vw;
+    color: white;
+    text-align:justify;
+    padding-left:4vw;
+    padding-top:4vh;
+   
+}
+.addevent {
     padding: 1vw;
+    height: 8vh;
+    background-color: blue;
+    color: white;
     font-size: 1vw;
 }
+
+h3{
+    font-family:Calibri;
+}
+
