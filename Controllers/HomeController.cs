@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nullamsoftware.Models;
 using System.Diagnostics;
+using System;
+
 
 namespace Nullamsoftware.Controllers
 {
@@ -18,15 +20,25 @@ namespace Nullamsoftware.Controllers
             return View();
         }
 
-        public IActionResult Addevent()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Addevent()
+        {
+            return View();
+        }
+
+       /* public IActionResult Addevent()
+        {
+            return View();
+        }
+       */
     }
 }
+
+
+

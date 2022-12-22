@@ -11,10 +11,8 @@
 
 </head>
 <body>
-    
-
-    <div class="container mt-4 mb-4">
-        <div class="row">
+ <div class="container mt-4 mb-4">
+        <div class="row mb-2">
             <div class="col-12">
                 <header>
                     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="height:8vh;">
@@ -28,8 +26,6 @@
                                 <li id="navli" class="nav-item p-3">
                                     <a id="nava" class="nav-link" onmouseover="hover2('blue','white')" onmouseout="hover2('white','black')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
                                 </li>
-
-
                             </ul>
 
                         </div>
@@ -38,66 +34,52 @@
                 </header>
             </div>
         </div>
+    @RenderBody()
 
+     <div class="row g-0 ">
+       <div class="col-3 contact">
+         <h3>dd</h3>
+           <p>
+              fdsafgasdfa <br>
+              fdsafgasdfa<br>
+              fdsafgasdfa<br>
+              dsffdf
+           </p>
+       </div>
 
-        <div class="row g-0 mb-4">
-            <div class="col-6 mainsite">
-                
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged.
-               
-            </div>
+       <div class="col-3 contact">
+         <h3>Siin</h3>
+           <p>
+             On lihtsalt<br>
+             Veidi teksti<br>
+             Selle osa täiteks<br>
+             Ja veel
+           </p>
+       </div>
 
-            <div class="col-6">
-                <img class="backgroundimage" src="~/img/pilt.jpg">
-            </div>
-        </div>
-        @RenderBody()
-        <div class="row g-0 ">
-            <div class="col-3 contact">
-            <h3>dd</h3>
-             <p>
-                fdsafgasdfa <br>
-                fdsafgasdfa<br>
-                fdsafgasdfa<br>
-                dsffdf
-              </p>
-            </div>
-
-            <div class="col-3 contact">
-
-                 <h3>Siin</h3>
-                 <p>
-                    On lihtsalt<br>
-                    Veidi teksti<br>
-                    Selle osa täiteks<br>
-                    Ja veel
-                </p>
-            </div>
-
-            <div class="col-3 contact">
-                <h3>Kontakt</h3>
-                <p><strong>Peakontor: Tallinnas</strong><br>
-                Väike-Ameerika 1, 11415<br>
-                Telefon: 605 4450 <br>
-                Faks: 605 3138 <br>
-				</p>
-            </div>
+       <div class="col-3 contact">
+         <h3>Kontakt</h3>
+         <p>
+           <strong>Peakontor: Tallinnas</strong><br>
+           Väike-Ameerika 1, 11415<br>
+           Telefon: 605 4450 <br>
+           Faks: 605 3138 <br>
+		 </p>
+       </div>
             
-            <div class="col-3 contact" style="padding-top:8vh;">
-                <p>
-                   <strong>Harukontor: Võrus</strong><br>
-                   Oja tn 7 (külastusaadress)<br>
-                   Telefon: 605 3330 <br>
-                   Faks: 605 3155 <br>
-				</p>
-            </div>
-        <div/>
-        </div>
-        </div>
+       <div class="col-3 contact" style="padding-top:8vh;">
+          <p>
+            <strong>Harukontor: Võrus</strong><br>
+            Oja tn 7 (külastusaadress)<br>
+            Telefon: 605 3330 <br>
+            Faks: 605 3155 <br>
+	     </p>
+       </div>
+
+    </div>
+  </div>
+        
+        
 
 
 
