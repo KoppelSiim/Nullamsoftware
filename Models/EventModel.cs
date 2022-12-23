@@ -1,6 +1,6 @@
 ﻿namespace Nullamsoftware.Models
 {
-    public class EventList
+    public class EventModel
     {
         //public int Id { get; set; }
         public string Yritusenimi{ get; set; }
