@@ -2,6 +2,9 @@
 using Nullamsoftware.Models;
 using System.Diagnostics;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 
 namespace Nullamsoftware.Controllers
@@ -26,17 +29,33 @@ namespace Nullamsoftware.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+       
         public IActionResult Addevent()
         {
             return View();
         }
 
-       /* public IActionResult Addevent()
+        EventDb edb = new EventDb();
+        [HttpPost]
+        public IActionResult Addevent([Bind]EventModel emp)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string res = edb.DbUpdate(emp);
+                    TempData["msg"] = res;
+                }
+            }
+            catch(Exception exp)
+            {
+                TempData["msg"] = exp.Message;
+            }
+
+
             return View();
         }
-       */
+       
     }
 }
 

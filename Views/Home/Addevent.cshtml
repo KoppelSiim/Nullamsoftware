@@ -27,36 +27,45 @@
        <div class ="col-12">
          <div class="addevent">
              <h3 class="pb-3">Ürituse lisamine</h3>
-                <form asp-action="Addevent" method="post">
+                <form asp-action="Addevent">
                <div class="form-group row pb-2">
                  <label for="ynimi" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Ürituse nimi:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                     <input asp-for="Yritusenimi" type="text" class="form-control" placeholder="">
+                            <input asp-for="Yritusenimi" name="Yritusenimi" class="form-control" placeholder="">
                    </div>
                </div>
                <div class="form-group row pb-2">
                  <label for="toimumisaeg" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Toimumisaeg:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                            <input asp-for="Toimumisaeg" type="text" name="txtAeg" class="form-control" placeholder="pp:kk:aaaa hh:mm">
+                            <input asp-for="Toimumisaeg" class="form-control" placeholder="">
                    </div>
                </div>
                <div class="form-group row pb-2">
                    <label for="toimumiskoht" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Koht:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                           <input asp-for="Koht" type="text" name="txtKoht" class="form-control" placeholder="">
+                           <input asp-for="Koht" class="form-control" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row pb-3">
                     <label for="lisainfo" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Lisainfo:</label>
                     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                       <input asp-for="Lisainfo"type="text" name="txtLisainfo" class="form-control form-control-lg" placeholder="">
+                       <input asp-for="Lisainfo" class="form-control form-control-lg" placeholder="">
                      </div>
                  </div>
-            </form>
+            
+               
                 <button type="button" class="btn btn-secondary btn-sm">Tagasi</button>
-                <input id="Submit1" type="submit" value="submit" />
-                <h2 style="font-style:italic; color:deeppink">@ViewBag.Result</h2>
-         </div>
+                <input  type="submit" value="Submit" />
+				</form>
+                @{
+                    if (@TempData["msg"] != null)
+                    {
+                        <script>
+                            alert('@TempData["msg"]')
+                        </script>
+                    }
+                }
+			</div>
        </div>
     </div>
    

@@ -1,4 +1,6 @@
-﻿CREATE PROC db_add_event
+﻿
+CREATE PROC db_add_event
+
 @Yritusenimimi NVARCHAR(250),
 @Toimumisaeg DATETIME,
 @Koht NVARCHAR(250),
