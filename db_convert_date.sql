@@ -1,5 +1,4 @@
-﻿--This script is compatible with SQL Server 2005 and above.
-
+﻿
 DECLARE @datetime DATETIME
 SET @datetime = GETDATE()
 SELECT

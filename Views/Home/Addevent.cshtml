@@ -27,11 +27,11 @@
        <div class ="col-12">
          <div class="addevent">
              <h3 class="pb-3">Ürituse lisamine</h3>
-                <form asp-action="Addevent">
+                <form asp-action="Addevent" id="addevent">
                <div class="form-group row pb-2">
                  <label for="ynimi" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Ürituse nimi:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                            <input asp-for="Yritusenimi" name="Yritusenimi" class="form-control" placeholder="">
+                            <input asp-for="Yritusenimi" name="Yritusenimi" class="form-control" placeholder="" id="nimi">
                    </div>
                </div>
                <div class="form-group row pb-2">
@@ -52,16 +52,18 @@
                        <input asp-for="Lisainfo" class="form-control form-control-lg" placeholder="">
                      </div>
                  </div>
-            
-               
-                <button type="button" class="btn btn-secondary btn-sm">Tagasi</button>
-                <input  type="submit" value="Submit" />
+
+
+                <button asp-controller="Home" asp-action="Index" type="submit" class="btn btn-secondary btn-sm">Tagasi</button>
+                <button type="submit" class="btn btn-primary btn-sm" id="lisa">Lisa</button>
 				</form>
                 @{
                     if (@TempData["msg"] != null)
                     {
                         <script>
-                            alert('@TempData["msg"]')
+                            
+                            alert('@TempData["msg"]');
+                            
                         </script>
                     }
                 }

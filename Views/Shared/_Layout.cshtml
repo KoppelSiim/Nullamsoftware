@@ -20,11 +20,14 @@
 
                         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                             <ul class="navbar-nav flex-grow-1">
-                                <li id="testing" class="nav-item p-3">
-                                    <a id="testing2" class="nav-link" onmouseover="hover('blue','white')" onmouseout="hover('white','black')" asp-area="" asp-controller="Home" asp-action="Index">AVALEHT</a>
+                                <li id="home" class="nav-item p-3">
+                                    <a id="homelink" class="nav-link" onmouseover="hover('blue','white','home','homelink')" onmouseout="hoverout('white','black','home','homelink')" asp-area="" asp-controller="Home" asp-action="Index">AVALEHT</a>
                                 </li>
-                                <li id="navli" class="nav-item p-3">
-                                    <a id="nava" class="nav-link" onmouseover="hover2('blue','white')" onmouseout="hover2('white','black')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
+                                <li id="addevent" class="nav-item p-3">
+                                    <a id="addeventlink" class="nav-link" onmouseover="hover('blue','white','addevent','addeventlink')" onmouseout="hoverout('white','black','addevent','addeventlink')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
+                                </li>
+                                <li id="events" class="nav-item p-3">
+                                    <a id="eventslink" class="nav-link" onmouseover="hover('blue','white','events','eventslink')" onmouseout="hoverout('white','black','events','eventslink')" asp-area="" asp-controller="Home" asp-action="ListOfEvents"> EVENTS</a>
                                 </li>
                             </ul>
 
@@ -34,8 +37,9 @@
                 </header>
             </div>
         </div>
-    @RenderBody()
 
+        @RenderBody()
+      
      <div class="row g-0 ">
        <div class="col-3 contact">
          <h3>dd</h3>
@@ -78,12 +82,7 @@
 
     </div>
   </div>
-        
-        
-
-
-
-
+       
     <script src="~/js/myscript.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

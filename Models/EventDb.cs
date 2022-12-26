@@ -12,7 +12,7 @@ namespace Nullamsoftware.Models
     public class EventDb
     {
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
+        
     public string DbUpdate(EventModel emp)
         {
             try
