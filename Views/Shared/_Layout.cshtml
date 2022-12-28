@@ -26,9 +26,7 @@
                                 <li id="addevent" class="nav-item p-3">
                                     <a id="addeventlink" class="nav-link" onmouseover="hover('blue','white','addevent','addeventlink')" onmouseout="hoverout('white','black','addevent','addeventlink')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
                                 </li>
-                                <li id="events" class="nav-item p-3">
-                                    <a id="eventslink" class="nav-link" onmouseover="hover('blue','white','events','eventslink')" onmouseout="hoverout('white','black','events','eventslink')" asp-area="" asp-controller="Home" asp-action="ListOfEvents"> EVENTS</a>
-                                </li>
+                              
                             </ul>
 
                         </div>
@@ -83,10 +81,11 @@
     </div>
   </div>
        
-    <script src="~/js/myscript.js"></script>
+  
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/myscript.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

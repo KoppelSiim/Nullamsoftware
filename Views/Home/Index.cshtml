@@ -33,33 +33,75 @@
                 <img class="backgroundimage" src="~/img/pilt.jpg">
             </div>
         </div>
-        <div class="row gx-3 mb-4">
+
+        <div class="row gx-3 mb-0">
             <div class="col-6">
-                <div class="col-content pt-3">Tulevased Üritused</div>
+               <div class="col-content pt-3">Tulevased Üritused</div>
             </div>
         <div class="col-6">
             <div class="col-content pt-3">Toimunud Üritused</div>
-        </div>
-        <div class="col-6">
-            <div class="col-content2" id="events123">
-        
-            </div> 
-        </div>
-        <div class="col-6">
-            <div class="col-content2">
-                <ol>
-                    <li>Magine</li>
-                    <li>Pesemine</li>
-                    <li>Jooksmine</li>
-                </ol>
             </div>
         </div>
-        </div>
+
+      <div class ="row g-0 mb-4">
+                 <div class="col-2 g-0">
+                        <div class="col-content2" id="events">
+				            <!-- Kuvame 5 tulevast üritust sorditult kasvavalt-->
+                            
+                            <ol id="eventlist">
+                                
+
+                            </ol>
+                            
+                        </div> 
+                </div>
+                 <div class="col-2">
+			                <!-- Kuvame tulevaste ürituste kuupäevad-->
+                    <div class="col-content2" id="eventd">
+                            <ol id="eventdates" style="list-style:none;">
+
+                            </ol>
+                    </div>
+
+                </div>
+
+                <div class="col-2 pe-2">
+                    <div class="col-content2" id="participants">
+                             <ol id="osa"style="list-style:none; font-weight:bold; color:grey;">
+                                  <li><a href="#">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                  <li><a href="#">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                  <li><a href="#">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                  <li><a href="#">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                  <li><a href="#">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                    
+                            </ol>
+                    </div>
+
+                </div>
+
+                <div class="col-3 ps-2">
+                    <div class="col-content2">
+                        <ol>
+                            <li>Magine</li>
+                            <li>Pesemine</li>
+                            <li>Jooksmine</li>
+                        </ol>
+                    </div>
+                </div>
+
+            <div class="col-3" >
+                <div class="col-content2">
+                    <ol>
+                        <li>Tekst</li>
+                        <li>Veel</li>
+                        <li>Loovus</li>
+                    </ol>
+                </div>
+            </div>
+     </div>
+        
        
-    <script src="~/js/myscript.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+ 
  
 </body>
 </html>

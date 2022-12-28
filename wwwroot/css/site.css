@@ -53,19 +53,48 @@ h3 {
     padding:1vw;
 }
 .col-content {
-    background-color:blue;
+    background-color: blue;
     color: white;
     font-size: 1vw;
     color: white;
     text-align: center;
-    font-size:1vw;
-    height:7vh;
+    font-size: 1vw;
+    text-overflow: clip;
+    height: 7vh;
 }
 
-.col-content2{
-    background-color:white;
+.col-content2 {
+    background-color: white;
+    color: black;
+    font-size: 1vw;
+    height: 25vh;
+    padding-top: 2vh;
+    padding-left: 1vw;
+}
+.remove {
+    height:3vh;
+    width:auto;
+    padding-left:0.7vw;
+    padding-bottom: 0.4vh;
+}
+#osa li{
+  padding-bottom: 0.3vh;
+}
+#osa li a {
+  text-decoration: none;
+  color: inherit;
+}
+#osa li a:hover{
     color:black;
-    height:25vh;
+}
+
+#eventdates li{
+    padding-bottom:0.5vh;
+}
+
+#events li {
+    padding-left: 1vw;
+    padding-bottom:0.1vh;
 }
 .contact {
     background-color: rgb(54, 56, 55);
@@ -113,8 +142,6 @@ h3 {
         padding-left: 23vw;
     }
 }
-
-
 
 
     .addevent h3 {

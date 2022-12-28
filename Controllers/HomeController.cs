@@ -6,34 +6,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Reflection.PortableExecutable;
+
+
 
 namespace Nullamsoftware.Controllers
 {
     public class HomeController : Controller
     {
-
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-       
-        public IActionResult ListOfEvents()
+
+        [NonAction]
+        public List<EventModel> ListOfEvents()
          {
-            //SqlDataReader data;
             List<EventModel> eventlist = new List<EventModel>();
             SqlCommand com = new SqlCommand("get_future_events", con);
             con.Open();
-            //data = com.ExecuteReader();
             eventlist.Clear();
             
          using (SqlDataReader rdr = com.ExecuteReader())
                 while (rdr.Read())
             {
                 eventlist.Add(new EventModel { Yritusenimi = rdr["Yritusenimi"].ToString(), Toimumisaeg = (DateTime)rdr["Toimumisaeg"] });
-               
-                
             }
             con.Close();
-            return View(eventlist);
+            return eventlist;
+
         }
+        [HttpGet]
+        public JsonResult ReturnEventList()
+        {
+            return Json(ListOfEvents());
+        }
+
+
+
         
         public IActionResult Index()
         {
