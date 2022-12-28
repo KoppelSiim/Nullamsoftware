@@ -38,9 +38,12 @@ namespace Nullamsoftware.Controllers
             return Json(ListOfEvents());
         }
 
+        public IActionResult Participants()
+        {
+            return View();
+        }
 
 
-        
         public IActionResult Index()
         {
             return View();

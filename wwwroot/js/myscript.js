@@ -1,4 +1,4 @@
-﻿///i.toimumisaeg.slice(0,10)+"</li>")
+﻿
 
 $(document).ready(function () {
 

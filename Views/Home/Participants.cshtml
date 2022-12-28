@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Participants";
+
+}
+
+<body>
+    <div class="row g-0">
+        <div class="col-3">
+            <div class="addeventtitle">Osavõtjad</div>
+        </div>
+        <div class="col-9">
+            <img class="eventimage" src="~/img/libled.jpg" alt="libled" />
+        </div>
+        <div class="row g-0 pb-5 participantsrow" id="partrow">
+            <div class="col-3">
+                
+            </div>
+            <div class="col-3 pt-4 participantscol">
+              
+                    <h3>Osavõtjad</h3>
+                        <ol>
+                            <li>Ürituse nimi:</li>
+                            <li>Toimumisaeg:</li>
+                            <li>Koht:</li>
+                            <li>Osavõtjad:</li>
+                        </ol>
+               
+            </div>
+            <div class="col-6 pt-4">
+                siia tulevad andmed
+            </div>
+        </div>
+        <div class="row g-0 addparticipantrow" id="addp">
+            <div class="col-3">
+
+            </div>
+            <div class="col-9 addparticipantcol">
+                <h3>Osavõtjate lisamine</h3>
+                <div class="form-check form-check-inline mt-4 me-5 radioform">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Eraisik
+                    </label>
+                </div>
+                <div class="form-check form-check-inline mt-4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Ettevõte
+                    </label>
+                </div>
+                <form>
+                    <div class="form-group row pb-2">
+                        <label for="eesnimi" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Eesnimi:</label>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
+                            <input  name="eesnimi" class="form-control" placeholder="" id="nimi">
+                        </div>
+                    </div>
+                    <div class="form-group row pb-2">
+                        <label for="perenimi" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Perenimi:</label>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
+                            <input  class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row pb-2">
+                        <label for="isikukood" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Isikukood:</label>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
+                            <input class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row pb-2">
+                    <label for="makseviis" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Maksmisviis:</label>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
+                            <select class="form-select" id="inputGroupSelect02">
+                            <option selected></option>
+                            <option value="1">Ülekandega</option>
+                            <option value="2">Sularahas</option>    
+                            </select>
+                        </div>
+                     </div>
+                    <div class="form-group row">
+                        <label for="lisainfo" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Lisainfo:</label>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
+                            <textarea style="resize: none;" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+          
+        </div>
+    </div>
+</body>
