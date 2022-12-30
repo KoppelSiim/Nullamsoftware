@@ -11,7 +11,7 @@ namespace Nullamsoftware.Models
 {
     public class EventDb
     {
-        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+       SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         
     public string DbUpdate(EventModel emp)
         {
@@ -26,7 +26,7 @@ namespace Nullamsoftware.Models
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();
-                return ("Andmebaas edukalt uuendatud");
+                return ("Andmebaas edukalt uuendatud, yritus lisatud");
             }
             catch (Exception exep)
             {

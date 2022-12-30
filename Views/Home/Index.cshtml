@@ -68,33 +68,31 @@
                 <div class="col-2 pe-2">
                     <div class="col-content2" id="participants">
                              <ol id="osa"style="list-style:none; font-weight:bold; color:grey;">
-                                <li><a asp-controller="Home" asp-action="Participants">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
-                                <li><a asp-controller="Home" asp-action="Participants">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
-                                <li><a asp-controller="Home" asp-action="Participants">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
-                                <li><a asp-controller="Home" asp-action="Participants">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
-                                <li><a asp-controller="Home" asp-action="Participants">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                    <li><a asp-controller="Home" asp-action="Participants" id="plink1" >Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                <li><a asp-controller="Home" asp-action="Participants" id="plink2">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                <li><a asp-controller="Home" asp-action="Participants" id="plink3">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                <li><a asp-controller="Home" asp-action="Participants" id="plink4">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
+                                <li><a asp-controller="Home" asp-action="Participants" id="plink5">Osavõtjad</a> <img class="remove" src="~/img/remove.svg"></li>
                             </ol>
                     </div>
 
                 </div>
 
                 <div class="col-3 ps-2">
-                    <div class="col-content2">
-                        <ol>
-                            <li>Magine</li>
-                            <li>Pesemine</li>
-                            <li>Jooksmine</li>
-                        </ol>
+                    <div class="col-content2" id=pastevents>
+
+                    <ol id="pasteventlist">
+
+                    </ol>
+
                     </div>
                 </div>
 
             <div class="col-3" >
                 <div class="col-content2">
-                    <ol>
-                        <li>Tekst</li>
-                        <li>Veel</li>
-                        <li>Loovus</li>
-                    </ol>
+                <ol id="pasteventdates" style="list-style:none;">
+
+                </ol>
                 </div>
             </div>
      </div>

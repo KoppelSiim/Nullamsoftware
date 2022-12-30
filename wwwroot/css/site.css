@@ -182,12 +182,13 @@ h3 {
         }
 
 .addparticipantrow {
-    height: 40vh;
+    height: 50vh;
     background-color: white;
 }
 
 .addparticipantcol {
     padding-left: 2vw;
+    
 }
 
     .addparticipantcol h3 {
@@ -198,4 +199,7 @@ h3 {
 .radioform {
     margin-left: 8.4vw;
     margin-bottom:3vh;
+}
+.txtarea{
+    margin-bottom:4vh;
 }
