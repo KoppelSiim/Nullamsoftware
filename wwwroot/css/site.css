@@ -203,3 +203,7 @@ h3 {
 .txtarea{
     margin-bottom:4vh;
 }
+
+#datalist li {
+    padding-bottom: 1vh;
+}
