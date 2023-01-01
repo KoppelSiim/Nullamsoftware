@@ -1,20 +1,21 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿
+
 
 namespace Nullamsoftware.Models
-{
+{   // Event data model
     public class EventModel
-    {
-        public int Id { get; set; }
-        public string Yritusenimi { get; set; }
-        public DateTime Toimumisaeg { get; set; }
-        public string Koht { get; set; }
-        public string? Lisainfo { get; set; }
-        
 
+    {   // Primary key of the event
+        public int Id {get; set;}
+        // Event name
+        public string Yritusenimi {get; set;}
+        // Event time
+        public DateTime Toimumisaeg {get; set;}
+        // Place of the event
+        public string Koht {get; set;}
+        // Additional information
+        public string? Lisainfo {get; set;}
+        
     }
   
-
 }

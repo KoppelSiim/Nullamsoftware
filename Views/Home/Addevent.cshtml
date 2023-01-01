@@ -3,67 +3,64 @@
     ViewData["Title"] = "Addevent";
 }
 
+<!--- Page for adding events  ---> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Nullamsoftware</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Nullamsoftware.styles.css" asp-append-version="true" />
-
 </head>
-
 <body>
 
     <div class="row g-0 mb-4">
-       <div class="col-3">
-          <div class="addeventtitle">Ürituse lisamine</div>
-       </div>
+      <div class="col-3">
+        <div class="addeventtitle">Ürituse lisamine</div>
+      </div>
        <div class="col-9">
-          <img class="eventimage"src="~/img/libled.jpg" alt="libled"/>
+         <img class="eventimage"src="~/img/libled.jpg" alt="libled"/>
        </div>
        <div class ="col-12">
          <div class="addevent">
-             <h3 class="pb-3">Ürituse lisamine</h3>
-                <form asp-action="Addevent" id="addevent">
+           <h3 class="pb-3">Ürituse lisamine</h3>
+
+             <!--- Input form for adding events, i use asp-for to correlate input with EventModel --->
+             <form asp-action="Addevent" id="addevent">
                <div class="form-group row pb-2">
                  <label for="ynimi" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Ürituse nimi:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                            <input asp-for="Yritusenimi" name="Yritusenimi" class="form-control" placeholder="" id="nimi">
+                      <input asp-for="Yritusenimi" name="Yritusenimi" class="form-control" placeholder="" id="nimi">
                    </div>
                </div>
                <div class="form-group row pb-2">
                  <label for="toimumisaeg" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Toimumisaeg:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                            <input asp-for="Toimumisaeg" class="form-control" placeholder="">
+                     <input asp-for="Toimumisaeg" class="form-control" placeholder="">
                    </div>
                </div>
                <div class="form-group row pb-2">
-                   <label for="toimumiskoht" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Koht:</label>
+                 <label for="toimumiskoht" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Koht:</label>
                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                           <input asp-for="Koht" class="form-control" placeholder="">
+                     <input asp-for="Koht" class="form-control" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row textarea pb-3">
-                    <label for="lisainfo" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Lisainfo:</label>
+                  <label for="lisainfo" class="col-xl-2 col-md-3 col-sm-3 col-4 col-form-label">Lisainfo:</label>
                     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-7">
-                       <textarea asp-for="Lisainfo" class="form-control" placeholder="" style="resize:none" rows="2"></textarea>
+                      <textarea asp-for="Lisainfo" class="form-control" placeholder="" style="resize:none" rows="2"></textarea>
                      </div>
                  </div>
-
 
                 <button asp-controller="Home" asp-action="Index" type="submit" class="btn btn-secondary btn-sm">Tagasi</button>
                 <button type="submit" class="btn btn-primary btn-sm" id="lisa">Lisa</button>
 				</form>
-                @{
-                    if (@TempData["msg"] != null)
+				<!--- We let the user know if data insertion was successful, or if there was an error --->
+				@{
+                    if (TempData["msg"] != null)
                     {
                         <script>
-                            
                             alert('@TempData["msg"]');
-                            
                         </script>
                     }
                 }
@@ -71,6 +68,5 @@
        </div>
     </div>
    
-  
 </body>
 </html>

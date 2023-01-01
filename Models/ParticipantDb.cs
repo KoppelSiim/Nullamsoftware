@@ -5,15 +5,14 @@ using System.Data.SqlClient;
 namespace Nullamsoftware.Models
 {
     public class ParticipantDb
-    {
+    {   // Connection string
        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         public string ParticipantDbUpdate(ParticipantModel ptm)
         {
             try
-            {
+            {   // Add data with value using the participant model
                 SqlCommand com = new SqlCommand("INSERT INTO dbo.Participants (Isikut, Eesnimi, Perenimi, Isikukood, Maksmisviis, Lisainfoisik, Fk_Participant) VALUES(@Isikut, @Eesnimi, @Perenimi, @Isikukood, @Maksmisviis, @Lisainfoisik, @Fk_Participant)", con);
-                
                 com.Parameters.AddWithValue("@Isikut", ptm.Isikut);
                 com.Parameters.AddWithValue("@Eesnimi", ptm.Eesnimi);
                 com.Parameters.AddWithValue("@Perenimi", ptm.Perenimi);

@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using System.Data;
 using System.Data.SqlClient;
-using Nullamsoftware.Models;
-
 
 namespace Nullamsoftware.Models
 {
     public class EventDb
-    {
+    {  // Database connection string
        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nullamdatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         
+        //Method for adding events using the events datamodel
     public string DbUpdate(EventModel emp)
         {
             try
-            {
+            {   // Start the procedure for adding events
                 SqlCommand com = new SqlCommand("db_add_event", con);
                 com.CommandType = CommandType.StoredProcedure;
+                // Add the values that correspond with our eventmodel
                 com.Parameters.AddWithValue("@Yritusenimimi", emp.Yritusenimi);
                 com.Parameters.AddWithValue("@Toimumisaeg", emp.Toimumisaeg);
                 com.Parameters.AddWithValue("@Koht", emp.Koht);
@@ -38,6 +35,6 @@ namespace Nullamsoftware.Models
 
             }
         }
-
+        
     }
 }

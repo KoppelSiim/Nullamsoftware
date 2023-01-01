@@ -4,88 +4,85 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Nullamsoftware</title>
+    <!--- All our pages get the style from this layout page --->    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Nullamsoftware.styles.css" asp-append-version="true" />
-  
-
 </head>
+    <!--- This is the layout page, it displays the content that is repeating on all the pages (like header and footer), so we dont have to repeat the html ----->
 <body>
+    <!--- All of our content is in a container and it helps to align the emenets --->
  <div class="container mt-4 mb-4">
-        <div class="row mb-2">
-            <div class="col-12">
-                <header>
-                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="height:8vh;">
-                        <img class="logo" src="~/img/logo.svg" alt="logo">
+   <div class="row mb-2">
+     <div class="col-12">
+       <!--- Responsive header with links, we use asp-action method for redirection --->
+       <header>
+          <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="height:8vh;">
+             <img class="logo" src="~/img/logo.svg" alt="logo">
+               <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                 <ul class="navbar-nav flex-grow-1">
+                   <li id="home" class="nav-item p-3">
+                     <a id="homelink" class="nav-link" onmouseover="hover('blue','white','home','homelink')" onmouseout="hoverout('white','black','home','homelink')" asp-area="" asp-controller="Home" asp-action="Index">AVALEHT</a>
+                       </li>
+                   <li id="addevent" class="nav-item p-3">
+                      <a id="addeventlink" class="nav-link" onmouseover="hover('blue','white','addevent','addeventlink')" onmouseout="hoverout('white','black','addevent','addeventlink')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
+                   </li>
+                  </ul>
+               </div>
+              <img class="symbol" src="~/img/symbol.svg" alt="symbol">
+          </nav>
+       </header>
+      </div>
+   </div>
 
-                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <ul class="navbar-nav flex-grow-1">
-                                <li id="home" class="nav-item p-3">
-                                    <a id="homelink" class="nav-link" onmouseover="hover('blue','white','home','homelink')" onmouseout="hoverout('white','black','home','homelink')" asp-area="" asp-controller="Home" asp-action="Index">AVALEHT</a>
-                                </li>
-                                <li id="addevent" class="nav-item p-3">
-                                    <a id="addeventlink" class="nav-link" onmouseover="hover('blue','white','addevent','addeventlink')" onmouseout="hoverout('white','black','addevent','addeventlink')" asp-area="" asp-controller="Home" asp-action="Addevent"> LISAMINE</a>
-                                </li>
-                              
-                            </ul>
+   <!--- Renderbody method takes the content of the child page and merges it into the layout --->
+         @RenderBody()
 
-                        </div>
-                        <img class="symbol" src="~/img/symbol.svg" alt="symbol">
-                    </nav>
-                </header>
-            </div>
-        </div>
-
-        @RenderBody()
-      
-     <div class="row g-0 ">
-       <div class="col-3 contact">
-         <h3>dd</h3>
-           <p>
-              fdsafgasdfa <br>
-              fdsafgasdfa<br>
-              fdsafgasdfa<br>
-              dsffdf
+   <!--- Footer area --->
+   <div class="row g-0 ">
+     <div class="col-3 contact">
+       <h3>Some text</h3>
+         <p>
+            Some<br>
+            More<br>
+            Text<br>
+            Here
            </p>
        </div>
-
-       <div class="col-3 contact">
-         <h3>Siin</h3>
-           <p>
-             On lihtsalt<br>
-             Veidi teksti<br>
-             Selle osa täiteks<br>
-             Ja veel
-           </p>
+     <div class="col-3 contact">
+       <h3>Here</h3>
+         <p>
+             Some more<br>
+             Very creative text<br>
+             The fill the<br>
+             Footer area
+         </p>
        </div>
-
-       <div class="col-3 contact">
-         <h3>Kontakt</h3>
+     <div class="col-3 contact">
+       <h3>Kontakt</h3>
          <p>
            <strong>Peakontor: Tallinnas</strong><br>
            Väike-Ameerika 1, 11415<br>
            Telefon: 605 4450 <br>
            Faks: 605 3138 <br>
 		 </p>
-       </div>
-            
-       <div class="col-3 contact" style="padding-top:8vh;">
-          <p>
-            <strong>Harukontor: Võrus</strong><br>
-            Oja tn 7 (külastusaadress)<br>
-            Telefon: 605 3330 <br>
-            Faks: 605 3155 <br>
+     </div>
+     <div class="col-3 contact" style="padding-top:8vh;">
+       <p>
+         <strong>Harukontor: Võrus</strong><br>
+           Oja tn 7 (külastusaadress)<br>
+           Telefon: 605 3330 <br>
+           Faks: 605 3155 <br>
 	     </p>
-       </div>
-
+     </div>
     </div>
   </div>
-       
-  
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/myscript.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+   <!--- Our whole page uses scripts from this page and we do not have to add them to other pages --->
+   <script src="~/lib/jquery/dist/jquery.min.js"></script>
+   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="~/js/site.js" asp-append-version="true"></script>
+   <script src="~/js/myscript.js"></script>
+   @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
