@@ -20,7 +20,7 @@
         <div class="col-3">
                 
         </div>
-        <div class="col-3 pt-4 participantscol">      
+        <div class="col-3 participantscol">      
         <h3>Osavõtjad</h3>
         <ol>
            <li>Ürituse nimi:</li>
@@ -30,11 +30,12 @@
         </ol>
                
         </div>
-        <div class="col-6 pt-4" >
-             <ol style ="list-style:none" id="datalist">
-                <li id="esimenel"></li>
-                <li id="teinel"></li>
-                <li id="kolmasl"></li>
+        <div class="col-6 participantsdatacol">
+             <ol>
+                
+                <li id="Ynimi"></li>
+                <li id="Toimumisaeg"></li>
+                <li id="Koht"></li>
              </ol>
         </div>
     </div>
@@ -47,6 +48,7 @@
      <div class="col-9 addparticipantcol">
        <h3>Osavõtjate lisamine</h3>
 		<form asp-action="Participants" name="addp">
+            <input asp-for = "Fk_Participant" name="Fk_Participant" value="" id="fkval" style="display:none"> 
             <!-- Eraisik on : 1, Ettevõte on: 2 -->
           <div class="form-check form-check-inline me-5 radioform">
 					<input asp-for="Isikut" name="Isikut" value="1" class="form-check-input" type="radio" id="flexRadioDefault1">

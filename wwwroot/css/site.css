@@ -166,10 +166,12 @@ h3 {
 .participantscol h3 {
     color: blue;
     font-size: 1.5vw;
+    padding-bottom:1.5vh;
 }
 
 .participantscol {
     padding-left: 2vw;
+    padding-top:4vh;
 }
 
     .participantscol ol {
@@ -178,7 +180,8 @@ h3 {
     }
 
         .participantscol ol li {
-            margin-bottom: 1vh;
+            margin-bottom: 0.5vh;
+            
         }
 
 .addparticipantrow {
@@ -204,6 +207,15 @@ h3 {
     margin-bottom:4vh;
 }
 
-#datalist li {
-    padding-bottom: 1vh;
+.participantsdatacol{
+    padding-top:10vh;
 }
+
+.participantsdatacol ol{
+    list-style:none;
+    padding:0;
+}
+    .participantsdatacol ol li{
+        list-style: none;
+        margin-bottom: 0.5vh;
+    }

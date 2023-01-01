@@ -67,20 +67,20 @@ namespace Nullamsoftware.Controllers
         }
 
         [NonAction]
-        public EventModel EventDataById (string id)
+        public EventModel EventDataById (string linkid)
         {
-            System.Diagnostics.Debug.WriteLine("EventdatabyId: " + id);
+            System.Diagnostics.Debug.WriteLine("EventdatabyId: " + linkid);
             EventModel evmodel=new EventModel();
 
-            SqlCommand com = new SqlCommand("SELECT * FROM (SELECT TOP 5 Id,Yritusenimi,Toimumisaeg,Koht,Lisainfo, ROW_NUMBER() OVER(ORDER BY Toimumisaeg) AS ROW FROM dbo.Eventlist WHERE Toimumisaeg > cast(sysdatetime() as date) ORDER BY Toimumisaeg) AS TMP WHERE ROW = @Id", con);
-            com.Parameters.Add(new SqlParameter("Id", id));
+            SqlCommand com = new SqlCommand("SELECT * FROM (SELECT TOP 5 Id,Yritusenimi,Toimumisaeg,Koht,Lisainfo, ROW_NUMBER() OVER(ORDER BY Toimumisaeg) AS ROW FROM dbo.Eventlist WHERE Toimumisaeg > cast(sysdatetime() as date) ORDER BY Toimumisaeg) AS TMP WHERE ROW = @Row", con);
+            com.Parameters.Add(new SqlParameter("@Row", linkid));
             con.Open();
             
 
             using (SqlDataReader rdr = com.ExecuteReader())
                 while (rdr.Read())
                 {
-                    System.Diagnostics.Debug.WriteLine("Leidsime: " + id);
+                    System.Diagnostics.Debug.WriteLine("Leidsime: " + linkid);
                     evmodel = new EventModel()
                     {
                         Id = (int)rdr["Id"],
@@ -91,21 +91,12 @@ namespace Nullamsoftware.Controllers
                     };
                 }
             con.Close();
-            System.Diagnostics.Debug.WriteLine("Leidsime evmodel: " + evmodel);
+            System.Diagnostics.Debug.WriteLine("Leidsime evmodel: " + evmodel.Id);
             return evmodel;
 
         }
 
 
-
-
-        /*
-        [HttpGet]
-        public JsonResult ReturnEventData()
-        {
-            return Json(EventDataById());
-        }
-        */
         [HttpGet]
         public JsonResult ReturnEventList(string sqlproc)
         {
@@ -123,12 +114,12 @@ namespace Nullamsoftware.Controllers
         //SELLEGA SIIN ON VAJA TEGELEDA!!!!!!!!!!!!!!!!!!!!!!!!!! uus fn juurde andmete jaoks?
 
         [HttpPost]
-        public JsonResult GetLinkId(string id)
+        public JsonResult GetLinkId(string linkid)
         {
-            System.Diagnostics.Debug.WriteLine("Mul on vaja seda: " + id);
+            System.Diagnostics.Debug.WriteLine("Mul on vaja seda: " + linkid);
            
-            System.Diagnostics.Debug.WriteLine(EventDataById(id));
-            return Json(EventDataById(id));
+            System.Diagnostics.Debug.WriteLine(EventDataById(linkid));
+            return Json(EventDataById(linkid));
            // System.Diagnostics.Debug.WriteLine("Mul on vaja seda: "+ lm.Linkid);
 
            
@@ -178,7 +169,7 @@ namespace Nullamsoftware.Controllers
             return View();
         }
 
-
+        
         ParticipantDb pdb = new ParticipantDb();
         [HttpPost]
         public IActionResult Participants([Bind]ParticipantModel pm)

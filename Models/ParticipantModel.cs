@@ -14,6 +14,6 @@ namespace Nullamsoftware.Models
         public string Isikukood {get;set;}
         public int Maksmisviis {get;set;}
         public string? Lisainfoisik {get;set;}
-
+        public int Fk_Participant { get; set; }
     }
 }

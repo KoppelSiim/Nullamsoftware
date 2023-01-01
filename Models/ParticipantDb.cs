@@ -12,14 +12,15 @@ namespace Nullamsoftware.Models
         {
             try
             {
-                SqlCommand com = new SqlCommand("db_add_participant", con);
-                com.CommandType = CommandType.StoredProcedure;
+                SqlCommand com = new SqlCommand("INSERT INTO dbo.Participants (Isikut, Eesnimi, Perenimi, Isikukood, Maksmisviis, Lisainfoisik, Fk_Participant) VALUES(@Isikut, @Eesnimi, @Perenimi, @Isikukood, @Maksmisviis, @Lisainfoisik, @Fk_Participant)", con);
+                
                 com.Parameters.AddWithValue("@Isikut", ptm.Isikut);
                 com.Parameters.AddWithValue("@Eesnimi", ptm.Eesnimi);
                 com.Parameters.AddWithValue("@Perenimi", ptm.Perenimi);
                 com.Parameters.AddWithValue("@Isikukood", ptm.Isikukood);
                 com.Parameters.AddWithValue("@Maksmisviis", ptm.Maksmisviis);
                 com.Parameters.AddWithValue("@Lisainfoisik", ptm.Lisainfoisik);
+                com.Parameters.AddWithValue("@Fk_Participant", ptm.Fk_Participant);
                 con.Open();
                 com.ExecuteNonQuery();
                 con.Close();
